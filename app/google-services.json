@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "882949631248",
+    "firebase_url": "https://fir-chatapp-c0fd4.firebaseio.com",
+    "project_id": "fir-chatapp-c0fd4",
+    "storage_bucket": "fir-chatapp-c0fd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882949631248:android:ea1701f53c213a948f8995",
+        "android_client_info": {
+          "package_name": "com.punith.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882949631248-scudsm218ciih4jvrrff0sse9bp7ib4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbsbdnYY6WS7KTmO79TjVz20SqcSazXPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882949631248-scudsm218ciih4jvrrff0sse9bp7ib4c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
