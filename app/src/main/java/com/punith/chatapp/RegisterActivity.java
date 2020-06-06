@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -20,14 +21,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    MaterialEditText username, email,passwd;
+    EditText username, email, passwd, mobileno;
     Button btn_register;
     FirebaseAuth auth;
     DatabaseReference dbReferrence;
@@ -37,13 +37,10 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Register");
-        setActionBar(toolbar);
-        getActionBar().setDisplayHomeAsUpEnabled(true);
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
         passwd = findViewById(R.id.password);
+        mobileno = findViewById(R.id.mobphone);
         btn_register = findViewById(R.id.btn_register);
 
         auth = FirebaseAuth.getInstance();
@@ -64,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String userName = username.getText().toString();
                 String user_email = email.getText().toString();
                 String pwd = passwd.getText().toString();
-
+                String mobno = mobileno.getText().toString();
 
                 if(TextUtils.isEmpty(userName) || TextUtils.isEmpty(user_email) || TextUtils.isEmpty(pwd))
                 {
@@ -73,14 +70,14 @@ public class RegisterActivity extends AppCompatActivity {
                 else if(!isValidPassword(pwd)){
                     Toast.makeText(RegisterActivity.this, "Password must contain at least one uppercase letter, one lower case letter, one number,special characters and Minimum length of eight character", Toast.LENGTH_SHORT).show();
                 }else{
-                    register(userName,user_email,pwd);
+                    register(userName,user_email,pwd,mobno);
                 }
             }
         });
 
     }
 
-    private void register(final String userName, String email, String password){
+    private void register(final String userName, String email, String password, final String mobno){
             auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -93,6 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
                         HashMap<String, String> registerMap = new HashMap<>();
                         registerMap.put("id",userId);
                         registerMap.put("username",userName);
+                        registerMap.put("mobileNo",mobno);
                         registerMap.put("imageURL","default");
 
                         dbReferrence.setValue(registerMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -107,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         });
                     }else {
-                        Toast.makeText(RegisterActivity.this, "You cant register with this email or password", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

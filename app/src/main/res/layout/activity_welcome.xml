@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/bytes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Welcome To WeChat"
+            android:textColor="#128C7E"
+            android:textSize="30dp"
+            android:gravity="top|center"
+            android:textStyle="bold"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp"
+            android:layout_above="@+id/imgvw" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ib"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/imgvw" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+
+        <TextView
+            android:id="@+id/bytes1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text='Read our Privacy Policy. Tap "Agree and Continue" to accept the Terms and Condition'
+            android:textColor="#808080"
+            android:textSize="14dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_agree"
+            android:text="Agree and Continue"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="#fff"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="590dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="from"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:textColor="#808080" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Raaj"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:textColor="#25d366"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>
