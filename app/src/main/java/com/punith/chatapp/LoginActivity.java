@@ -37,10 +37,10 @@ public class LoginActivity extends AppCompatActivity {
         btn_Login = (TextView)findViewById(R.id.btn_login);
         auth = FirebaseAuth.getInstance();
 
-        TextView register = (TextView)findViewById(R.id.lnkRegister);
-        register.setMovementMethod(LinkMovementMethod.getInstance());
+        TextView login = (TextView)findViewById(R.id.lnkRegister);
+        login.setMovementMethod(LinkMovementMethod.getInstance());
 
-        register.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);

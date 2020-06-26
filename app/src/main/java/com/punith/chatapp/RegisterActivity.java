@@ -45,9 +45,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
-        TextView login = (TextView)findViewById(R.id.lnkLogin);
-        login.setMovementMethod(LinkMovementMethod.getInstance());
-        login.setOnClickListener(new View.OnClickListener() {
+        TextView register = (TextView)findViewById(R.id.lnkLogin);
+        register.setMovementMethod(LinkMovementMethod.getInstance());
+
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);

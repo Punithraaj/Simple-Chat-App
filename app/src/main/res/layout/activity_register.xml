@@ -157,7 +157,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="New User? Register here"
+            android:text="Aleready Registered?"
             android:gravity="center"
             android:textSize="20dp"
             android:textColor="#fff"
