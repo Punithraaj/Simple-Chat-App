@@ -73,6 +73,7 @@ DatabaseReference reference;
             case R.id.logout:
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(ChatActivity.this,LoginActivity.class));
+                finish();
                 return true;
         }
         return false;
