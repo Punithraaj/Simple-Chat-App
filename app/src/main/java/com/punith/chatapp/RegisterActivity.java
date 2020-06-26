@@ -94,6 +94,7 @@ public class RegisterActivity extends AppCompatActivity {
                         registerMap.put("mobileNo",mobno);
                         registerMap.put("imageURL","default");
 
+
                         dbReferrence.setValue(registerMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
